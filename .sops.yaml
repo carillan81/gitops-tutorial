@@ -1,0 +1,4 @@
+creation_rules:
+- encrypted_regex: ^(data|stringData)$
+  path_regex: management-clusters/grizzly/secrets/.*\.enc\.yaml
+  pgp: 6f5e99dde8667971e0a2f2e0ba3d7b183b3fee98
