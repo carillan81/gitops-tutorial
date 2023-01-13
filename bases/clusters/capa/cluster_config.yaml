@@ -4,6 +4,6 @@ clusterName: ${cluster_name}
 controlPlane:
   replicas: 3
 machinePools:
-- {}
+- name: machine-pool0
 network: {}
 organization: ${organization}
