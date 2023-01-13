@@ -1,0 +1,20 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: grizzly-clusters-bigotes
+  namespace: default
+spec:
+  interval: 1m
+  path: ./management-clusters/grizzly/organizations/carillan/workload-clusters/bigotes/mapi
+  postBuild:
+    substitute:
+      cluster_name: bigotes
+      cluster_release: 0.1.9
+      default_apps_release: 0.1.1
+      organization: carillan
+  prune: false
+  serviceAccountName: automation
+  sourceRef:
+    kind: GitRepository
+    name: carillan-gitops-tuto
+  timeout: 2m

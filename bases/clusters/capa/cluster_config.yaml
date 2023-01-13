@@ -1,0 +1,9 @@
+aws: {}
+bastion: {}
+clusterName: ${cluster_name}
+controlPlane:
+  replicas: 3
+machinePools:
+- {}
+network: {}
+organization: ${organization}
