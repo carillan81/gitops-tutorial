@@ -1,0 +1,6 @@
+- op: add
+  path: /spec/extraConfigs
+  value:
+    - name: "${cluster_name}-wc-config"
+      namespace: org-${organization}
+      priority: 90

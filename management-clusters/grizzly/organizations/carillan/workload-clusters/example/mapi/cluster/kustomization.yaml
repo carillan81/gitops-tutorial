@@ -7,14 +7,8 @@ configMapGenerator:
     - values=wc-config.yaml
     name: ${cluster_name}-wc-config
     namespace: org-${organization}
-patches:
-  - patch: |
-      - op: add
-        path: /spec/extraConfigs
-        value:
-          name: ${cluster_name}-wc-config
-          namespace: org-${organization}
-          priority: 55
+patchesJson6902:
+  - path: cluster-patch.yaml
     target:
       group: application.giantswarm.io
       kind: App
