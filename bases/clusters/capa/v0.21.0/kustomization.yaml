@@ -10,12 +10,13 @@ kind: Kustomization
 patches:
   - patch: |
       - op: add
-        path: /spec/extraConfigs
-        value:
-          - kind: configMap
-            name: ${cluster_name}-0.21.0-config
-            namespace: org-${organization}
-            priority: 55
+        path: /spec
+        extraConfigs
+          value:
+            - kind: configMap
+              name: ${cluster_name}-0.21.0-config
+              namespace: org-${organization}
+              priority: 55
     target:
       group: application.giantswarm.io
       kind: App
