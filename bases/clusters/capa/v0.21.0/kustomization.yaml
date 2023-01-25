@@ -16,4 +16,4 @@ patch: |
         namespace: org-${organization}
         priority: 55
 resources:
-  - ../template
+  - ../template/
