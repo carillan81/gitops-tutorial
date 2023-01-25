@@ -12,4 +12,4 @@ generatorOptions:
 patchesStrategicMerge:
   - patch_config.yaml
 resources:
-  - ../../../../../../../../bases/clusters/capa/template/
+  - ../../../../../../../../bases/clusters/capa/v0.21.0/
