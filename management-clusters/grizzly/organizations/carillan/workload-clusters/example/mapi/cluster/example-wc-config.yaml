@@ -1,0 +1,2 @@
+machinePools:
+- instanceType: m5.large

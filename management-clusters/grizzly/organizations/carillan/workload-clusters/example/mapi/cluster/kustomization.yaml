@@ -2,5 +2,20 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 commonLabels:
   giantswarm.io/managed-by: flux
 kind: Kustomization
+patches:
+  - patch: |
+      - op: add
+        path: /spec/extraConfigs
+        value:
+          name: ${cluster_name}-wc-config
+          namespace: org-${organization}
+          priority: 55
+    target:
+      group: application.giantswarm.io
+      kind: App
+      name: ${cluster_name}
+      namespace: org-${organization}
+      version: v1alpha1
 resources:
   - ../../../../../../../../bases/clusters/capa/v0.21.0/
+  - ${cluster_name}-wc-config
