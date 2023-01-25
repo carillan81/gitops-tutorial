@@ -1,2 +1,6 @@
 machinePools:
 - instanceType: m5.large
+  maxSize: 10
+  minSize: 3
+  name: machine-pool0
+  rootVolumeSizeGB: 300
