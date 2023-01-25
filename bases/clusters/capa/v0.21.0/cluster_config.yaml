@@ -1,6 +1,6 @@
 aws: {}
 bastion: {}
-clusterName: mywcl
+clusterName: ${cluster_name}
 controlPlane:
   replicas: 3
 machinePools:
@@ -11,4 +11,4 @@ machinePools:
   rootVolumeSizeGB: 300
 network:
   availabilityZoneUsageLimit: 3
-organization: carillan
+organization: ${organization}
