@@ -5,7 +5,6 @@ metadata:
   namespace: org-${organization}
 spec:
   extraConfigs:
-    - $patch: merge
     - kind: configMap
       name: ${cluster_name}-wc-config
       namespace: org-${organization}
