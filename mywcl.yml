@@ -1,10 +1,11 @@
+---
 apiVersion: application.giantswarm.io/v1alpha1
 kind: App
 metadata:
   labels:
     app-operator.giantswarm.io/version: 0.0.0
-  name: ${cluster_name}
-  namespace: org-${organization}
+  name: mywcl
+  namespace: org-carillan
 spec:
   catalog: cluster
   config:
@@ -22,9 +23,9 @@ spec:
       name: ""
       namespace: ""
   name: cluster-aws
-  namespace: org-${organization}
+  namespace: org-carillan
   userConfig:
     configMap:
-      name: ${cluster_name}-config
-      namespace: org-${organization}
-  version: ${cluster_release}
+      name: mywcl-userconfig
+      namespace: org-carillan
+  version: 0.21.0

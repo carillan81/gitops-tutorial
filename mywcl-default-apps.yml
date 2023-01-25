@@ -1,0 +1,33 @@
+---
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  labels:
+    app-operator.giantswarm.io/version: 0.0.0
+    giantswarm.io/cluster: mywcl
+    giantswarm.io/managed-by: cluster
+  name: mywcl-default-apps
+  namespace: org-carillan
+spec:
+  catalog: cluster
+  config:
+    configMap:
+      name: mywcl-cluster-values
+      namespace: org-carillan
+    secret:
+      name: ""
+      namespace: ""
+  kubeConfig:
+    context:
+      name: ""
+    inCluster: true
+    secret:
+      name: ""
+      namespace: ""
+  name: default-apps-aws
+  namespace: org-carillan
+  userConfig:
+    configMap:
+      name: mywcl-default-apps-userconfig
+      namespace: org-carillan
+  version: 0.15.0
