@@ -27,5 +27,4 @@ spec:
     configMap:
       name: ${cluster_name}-config
       namespace: org-${organization}
-      priority: 50
   version: ${cluster_release}

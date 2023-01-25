@@ -10,7 +10,7 @@ kind: Kustomization
 patches:
   - patch: |
       - op: add
-        path: /spec/userConfigs
+        path: /spec/extraConfigs
         value:
           - kind: configMap
             name: ${cluster_name}-0.21.0-config
