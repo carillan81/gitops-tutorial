@@ -4,7 +4,7 @@ commonLabels:
 kind: Kustomization
 configMapGenerator:
   - files:
-    - values=wc-config.yaml
+    - values=wc_config.yaml
     name: ${cluster_name}-wc-config
     namespace: org-${organization}
 generatorOptions:
