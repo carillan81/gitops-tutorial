@@ -10,7 +10,13 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 patchesJson6902:
-  - path: cluster-patch.yaml
+  - patch: |
+      - op: add
+        path: /spec/extraConfigs
+        value:
+          - name: "${cluster_name}-wc-config"
+            namespace: org-${organization}
+            priority: 90
     target:
       group: application.giantswarm.io
       kind: App
