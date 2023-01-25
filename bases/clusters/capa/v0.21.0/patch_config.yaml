@@ -6,6 +6,6 @@ metadata:
 spec:
   extraConfigs:
     - kind: configMap
-      name: ${cluster_name}-config
+      name: ${cluster_name}-0.21.0-config
       namespace: org-${organization}
       priority: 55
