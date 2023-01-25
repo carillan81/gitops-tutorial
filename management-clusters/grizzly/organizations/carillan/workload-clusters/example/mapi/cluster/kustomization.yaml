@@ -7,6 +7,8 @@ configMapGenerator:
     - values=wc-config.yaml
     name: ${cluster_name}-wc-config
     namespace: org-${organization}
+generatorOptions:
+  disableNameSuffixHash: true
 patchesJson6902:
   - path: cluster-patch.yaml
     target:
