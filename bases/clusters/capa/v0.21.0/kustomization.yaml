@@ -12,9 +12,9 @@ patches:
       - op: add
         path: /spec/extraConfigs
         value:
-          name: ${cluster_name}-0.21.0-config
-          namespace: org-${organization}
-          priority: 55
+          - name: ${cluster_name}-0.21.0-config
+            namespace: org-${organization}
+            priority: 55
     target:
       group: application.giantswarm.io
       kind: App
