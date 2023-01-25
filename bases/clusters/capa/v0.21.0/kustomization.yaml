@@ -8,6 +8,6 @@ generatorOptions:
   disableNameSuffixHash: true
 kind: Kustomization
 patchesStrategicMerge:
-  - patch_config.yaml
+  - version_patch_config.yaml
 resources:
   - ../template
