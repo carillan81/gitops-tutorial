@@ -7,13 +7,20 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 kind: Kustomization
-patch: |
-  - op: add
-    path: /spec/userConfigs
-    value:
-      - kind: configMap
-        name: ${cluster_name}-0.21.0-config
-        namespace: org-${organization}
-        priority: 55
+patches:
+  - patch: |
+      - op: add
+        path: /spec/userConfigs
+        value:
+          - kind: configMap
+            name: ${cluster_name}-0.21.0-config
+            namespace: org-${organization}
+            priority: 55
+    target:
+      group: application.giantswarm.io
+      kind: App
+      name: ${cluster_name}
+      namespace: org-${organization}
+      version: v1alpha1
 resources:
-  - ../template/
+  - ../template
