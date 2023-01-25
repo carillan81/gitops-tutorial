@@ -1,0 +1,12 @@
+apiVersion: application.giantswarm.io/v1alpha1
+kind: App
+metadata:
+  name: ${cluster_name}
+  namespace: org-${organization}
+spec:
+  extraConfigs:
+    - $patch: merge
+    - kind: configMap
+      name: ${cluster_name}-wc-config
+      namespace: org-${organization}
+      priority: 90

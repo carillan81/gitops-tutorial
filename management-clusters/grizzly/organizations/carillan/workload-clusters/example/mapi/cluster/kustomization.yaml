@@ -9,19 +9,7 @@ configMapGenerator:
     namespace: org-${organization}
 generatorOptions:
   disableNameSuffixHash: true
-patchesJson6902:
-  - patch: |
-      - op: add
-        path: /spec/extraConfigs
-        value:
-          - name: "${cluster_name}-wc-config"
-            namespace: org-${organization}
-            priority: 90
-    target:
-      group: application.giantswarm.io
-      kind: App
-      name: ${cluster_name}
-      namespace: org-${organization}
-      version: v1alpha1
+patchesStrategicMerge:
+  - patch_config.yaml
 resources:
   - ../../../../../../../../bases/clusters/capa/v0.21.0/
