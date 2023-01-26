@@ -7,7 +7,19 @@ configMapGenerator:
 generatorOptions:
   disableNameSuffixHash: true
 kind: Kustomization
-patchesStrategicMerge:
-  - version_patch_config.yaml
+patches:
+  - patch: |
+      - type: merge
+        op: add
+        path: /spec/extraConfigs
+        value:
+          - name: ${cluster_name}-0.21.0-config
+            namespace: org-${organization}
+            priority: 105
+    target:
+      group: application.giantswarm.io
+      kind: App
+      name: \${cluster_name}
+      namespace: org-\${organization}
 resources:
   - ../template
