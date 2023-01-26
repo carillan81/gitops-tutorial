@@ -28,7 +28,6 @@ spec:
       name: ${cluster_name}-config
       namespace: org-${organization}
   extraConfigs:
-    - $patch: merge
     - name: ${cluster_name}-config
       namespace: org-${organization}
       priority: 110
