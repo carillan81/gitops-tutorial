@@ -14,7 +14,7 @@ patches:
       - op: add
         path: /spec/extraConfigs
         value:
-            name: ${cluster_name}-wc-config
+          - name: ${cluster_name}-wc-config
             namespace: org-${organization}
             priority: 110
     target:
@@ -23,4 +23,4 @@ patches:
       name: \${cluster_name}
       namespace: org-\${organization}
 resources:
-  - ../../../../../../../../bases/clusters/capa/template/
+  - ../../../../../../../../bases/clusters/capa/v0.21.0/
