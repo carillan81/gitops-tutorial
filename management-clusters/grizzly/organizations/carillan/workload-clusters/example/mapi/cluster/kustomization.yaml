@@ -12,7 +12,7 @@ generatorOptions:
 patches:
   - patch: |
       - op: add
-        path: /spec/extraConfigs/0
+        path: /spec/extraConfigs/-
         value:
           name: ${cluster_name}-wc-config
           namespace: org-${organization}
