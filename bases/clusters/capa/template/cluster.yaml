@@ -29,8 +29,7 @@ spec:
       namespace: org-${organization}
   extraConfigs:
     - $patch: merge
-    - kind: configMap
-      name: ${cluster_name}-config
+    - name: ${cluster_name}-config
       namespace: org-${organization}
       priority: 110
   version: ${cluster_release}
