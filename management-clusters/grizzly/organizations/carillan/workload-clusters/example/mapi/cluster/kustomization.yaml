@@ -11,10 +11,10 @@ generatorOptions:
   disableNameSuffixHash: true
 patches:
   - patch: |
-      - op: add
+      - type: merge
+        op: add
         path: /spec/extraConfigs
         value:
-          - $patch: merge
           - name: ${cluster_name}-wc-config
             namespace: org-${organization}
             priority: 111
