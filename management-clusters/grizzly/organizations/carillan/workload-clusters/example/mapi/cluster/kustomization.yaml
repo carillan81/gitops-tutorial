@@ -16,7 +16,7 @@ patches:
         value:
           - name: ${cluster_name}-wc-config
             namespace: org-${organization}
-            priority: 110
+            priority: 111
     target:
       group: application.giantswarm.io
       kind: App
