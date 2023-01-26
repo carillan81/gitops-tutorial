@@ -27,4 +27,9 @@ spec:
     configMap:
       name: ${cluster_name}-config
       namespace: org-${organization}
+  extraConfigs:
+    - kind: configMap
+      name: ${cluster_name}-config
+      namespace: org-${organization}
+      priority: 110
   version: ${cluster_release}
