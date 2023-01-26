@@ -11,11 +11,11 @@ patches:
   - patch: |
       - type: merge
         op: add
-        path: /spec/extraConfigs
+        path: /spec/extraConfigs/0
         value:
-          - name: ${cluster_name}-0.21.0-config
-            namespace: org-${organization}
-            priority: 105
+          name: ${cluster_name}-0.21.0-config
+          namespace: org-${organization}
+          priority: 105
     target:
       group: application.giantswarm.io
       kind: App
